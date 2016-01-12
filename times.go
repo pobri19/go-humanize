@@ -25,6 +25,13 @@ func Time(then time.Time) string {
 	return RelTime(then, time.Now(), "ago", "from now")
 }
 
+// TimeWithZone formats a time into a relative string.
+//
+// TimeWithZone(someT, someL) -> "3 weeks ago"
+func TimeWithZone(then time.Time, zone *time.Location) string {
+	return RelTime(then, time.Now().In(zone), "ago", "from now")
+}
+
 var magnitudes = []struct {
 	d      int64
 	format string

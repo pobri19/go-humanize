@@ -28,7 +28,10 @@ Example:
 
 ```go
 fmt.Printf("This was touched %s", humanize.Time(someTimeInstance))
+fmt.Printf("This was touched %s", humanize.TimeWithZone(someTimeInstance, timeZoneInstance))
 ```
+
+Use TimeWithZone to specify a timezone, otherwise it will default to the timezone time.Now() is using.
 
 Thanks to Kyle Lemons for the time implementation from an IRC
 conversation one day.  It's pretty neat.
